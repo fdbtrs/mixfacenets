@@ -50,9 +50,9 @@ def main(args):
         backbone = eval("backbones.{}".format(args.network))(False, dropout=dropout, fp16=cfg.fp16).to(local_rank)
     else:
      if(cfg.net_size=="s"):
-        backbone = mx.mixnet_s(embedding_size=cfg.embedding_size, width_scale=cfg.scale, gdw_size=cfg.gdw_size).to(local_rank)
+        backbone = mx.mixnet_s(embedding_size=cfg.embedding_size, width_scale=cfg.scale, gdw_size=cfg.gdw_size,shuffle=cfg.shuffle).to(local_rank)
      else:
-        backbone = mx.mixnet_m(embedding_size=cfg.embedding_size, width_scale=cfg.scale, gdw_size=cfg.gdw_size).to(local_rank)
+        backbone = mx.mixnet_m(embedding_size=cfg.embedding_size, width_scale=cfg.scale, gdw_size=cfg.gdw_size,shuffle=cfg.shuffle).to(local_rank)
 
     if args.resume:
         try:

@@ -248,10 +248,11 @@ class MixUnit(nn.Module):
                  conv2_kernel_count,
                  exp_factor,
                  se_factor,
-                 activation):
+                 activation, shuffle=True):
         super(MixUnit, self).__init__()
         assert (exp_factor >= 1)
         assert (se_factor >= 0)
+        self.shuffle=shuffle
         self.residual = (in_channels == out_channels) and (stride == 1)
         self.use_se = se_factor > 0
         mid_channels = exp_factor * in_channels
@@ -313,7 +314,8 @@ class MixUnit(nn.Module):
         x = self.conv2(x)
         if self.residual:
             x = x + identity
-        x=channel_shuffle2(x,2)
+        if (self.shuffle):
+         x=channel_shuffle2(x,2)
 
         return x
 
@@ -331,7 +333,7 @@ class MixInitBlock(nn.Module):
     """
     def __init__(self,
                  in_channels,
-                 out_channels,activation,stride=1):
+                 out_channels,activation,stride=1, shuffle=True):
         super(MixInitBlock, self).__init__()
         self.conv1 = conv3x3_block(
             in_channels=in_channels,
@@ -346,7 +348,7 @@ class MixInitBlock(nn.Module):
             conv2_kernel_count=1,
             exp_factor=1,
             se_factor=0,
-            activation=activation)
+            activation=activation,shuffle=shuffle)
 
     def forward(self, x):
         x = self.conv1(x)
@@ -396,11 +398,11 @@ class MixNet(nn.Module):
                  se_factors,
                  in_channels=3,
                  in_size=(112, 112),
-                 num_classes=1000,gdw_size=512):
+                 num_classes=1000,gdw_size=512,shuffle=True):
         super(MixNet, self).__init__()
         self.in_size = in_size
         self.num_classes = num_classes
-
+        self.shuffle=shuffle
         self.features = nn.Sequential()
         self.features.add_module("init_block", MixInitBlock(
             in_channels=in_channels,
@@ -425,7 +427,7 @@ class MixNet(nn.Module):
                     conv2_kernel_count=conv2_kernel_count,
                     exp_factor=exp_factor,
                     se_factor=se_factor,
-                    activation=activation))
+                    activation=activation,shuffle=self.shuffle))
                 in_channels = out_channels
             self.features.add_module("stage{}".format(i + 1), stage)
 
@@ -459,7 +461,7 @@ class MixNet(nn.Module):
 
 def get_mixnet(version,
                width_scale, embedding_size=512,model_name="mixnet_s",gdw_size=512
-              ,weight=None,
+              ,weight=None,shuffle=True,
                **kwargs):
     """
     Create MixNet model with specific parameters.
@@ -486,14 +488,6 @@ def get_mixnet(version,
         conv2_kernel_counts = [[2, 2], [1, 2, 2, 2], [2, 2, 2], [2, 2, 2, 1, 2, 2]]
         exp_factors = [[6, 3], [6, 6, 6, 6], [6, 6, 6], [6, 3, 3, 6, 6, 6]]
         se_factors = [[0, 0], [2, 2, 2, 2], [4, 4, 4], [2, 2, 2, 2, 2, 2]]
-    elif version =="ss":
-        init_block_channels = 16
-        channels = [[24, 24], [40, 40, 40, 40], [80, 80, 80], [120, 120, 120]]
-        exp_kernel_counts = [[2, 2], [1, 2, 2, 2], [1, 1, 1], [2, 2, 2]]
-        conv1_kernel_counts = [[1, 1], [3, 2, 2, 2], [3, 2, 2], [3, 4, 4]]
-        conv2_kernel_counts = [[2, 2], [1, 2, 2, 2], [2, 2, 2], [2, 2, 2]]
-        exp_factors = [[6, 3], [6, 6, 6, 6], [6, 6, 6], [6, 3, 3]]
-        se_factors = [[0, 0], [2, 2, 2, 2], [4, 4, 4], [2, 2, 2]]
     elif version == "m":
         init_block_channels = 24
         channels = [[32, 32], [40, 40, 40, 40], [80, 80, 80, 80], [120, 120, 120, 120, 200, 200, 200, 200]]
@@ -519,7 +513,7 @@ def get_mixnet(version,
         conv1_kernel_counts=conv1_kernel_counts,
         conv2_kernel_counts=conv2_kernel_counts,
         exp_factors=exp_factors,
-        se_factors=se_factors,gdw_size=gdw_size,
+        se_factors=se_factors,gdw_size=gdw_size,shuffle=shuffle,
         **kwargs)
     if (weight is not None):
         weight = torch.load(weight)
@@ -529,7 +523,7 @@ def get_mixnet(version,
     return net
 
 
-def mixnet_s(embedding_size=512,width_scale=0.5,gdw_size=512, weight=None,**kwargs):
+def mixnet_s(embedding_size=512,width_scale=0.5,gdw_size=512, weight=None,shuffle=True,**kwargs):
     """
     MixNet-S model from 'MixConv: Mixed Depthwise Convolutional Kernels,' https://arxiv.org/abs/1907.09595.
 
@@ -540,10 +534,10 @@ def mixnet_s(embedding_size=512,width_scale=0.5,gdw_size=512, weight=None,**kwar
     root : str, default '~/.torch/models'
         Location for keeping the model parameters.
     """
-    return get_mixnet(version="s", width_scale=width_scale,embedding_size=embedding_size,gdw_size=gdw_size, model_name="mixnet_s", **kwargs)
+    return get_mixnet(version="s", width_scale=width_scale,embedding_size=embedding_size,gdw_size=gdw_size, model_name="mixnet_s",shuffle=shuffle, **kwargs)
 
 
-def mixnet_m(embedding_size=512,width_scale=0.5,gdw_size=512,**kwargs):
+def mixnet_m(embedding_size=512,width_scale=0.5,gdw_size=512,shuffle=True,**kwargs):
     """
     MixNet-M model from 'MixConv: Mixed Depthwise Convolutional Kernels,' https://arxiv.org/abs/1907.09595.
 
@@ -554,10 +548,10 @@ def mixnet_m(embedding_size=512,width_scale=0.5,gdw_size=512,**kwargs):
     root : str, default '~/.torch/models'
         Location for keeping the model parameters.
     """
-    return get_mixnet(version="m", width_scale=width_scale,embedding_size=embedding_size,gdw_size=gdw_size, model_name="mixnet_m", **kwargs)
+    return get_mixnet(version="m", width_scale=width_scale,embedding_size=embedding_size,gdw_size=gdw_size, model_name="mixnet_m",shuffle=shuffle, **kwargs)
 
 
-def mixnet_l(embedding_size=512,width_scale=1.3,**kwargs):
+def mixnet_l(embedding_size=512,width_scale=1.3,shuffle=True,**kwargs):
     """
     MixNet-L model from 'MixConv: Mixed Depthwise Convolutional Kernels,' https://arxiv.org/abs/1907.09595.
 
@@ -568,7 +562,7 @@ def mixnet_l(embedding_size=512,width_scale=1.3,**kwargs):
     root : str, default '~/.torch/models'
         Location for keeping the model parameters.
     """
-    return get_mixnet(version="m", width_scale=width_scale,embedding_size=embedding_size, model_name="mixnet_l", **kwargs)
+    return get_mixnet(version="m", width_scale=width_scale,embedding_size=embedding_size, model_name="mixnet_l",shuffle=shuffle, **kwargs)
 
 
 
@@ -579,7 +573,7 @@ def _test():
     pretrained = False
 
     models = [
-        mixnet_m
+        mixnet_s
     ]
 
     for model in models:

@@ -22,6 +22,7 @@ config.net_name="resnet"
 config.net_size="s"
 config.scale=1.0
 config.gdw_size=1024
+config.shuffle=True
 if (config.net_size=="s"):
     config.gdw_size = 512
 
