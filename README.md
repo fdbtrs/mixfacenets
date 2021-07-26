@@ -2,6 +2,8 @@
 
 
 
+## This is the official repository of the paper: MixFaceNets: Extremely Efficient Face Recognition Networks
+https://ieeexplore.ieee.org/abstract/document/9484374
 
 
 If you find MixFaceNets useful in your research, please consider to cite the following related paper:
