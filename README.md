@@ -4,7 +4,7 @@
 
 ## This is the official repository of the paper: MixFaceNets: Extremely Efficient Face Recognition Networks.
 (Accepted in IJCB2021)
-[IEEE MixFaceNets](https://ieeexplore.ieee.org/abstract/document/9484374)
+[https://ieeexplore.ieee.org/abstract/document/9484374](https://ieeexplore.ieee.org/abstract/document/9484374)
 
 [paper](https://raw.githubusercontent.com/fdbtrs/mixfacenets/main/paper/MixFaceNets_Extremely_Efficient_Face_Recognition_Networks.pdf)
 
