@@ -8,14 +8,14 @@
 
 
 
-| Model  | MFLOPs |Params (M)|LFW %| AgeDB-30 % |IJB-B ( TAR at FAR1e–6) | IJB-C ( TAR at FAR1e–6)| Pretrained model|
+| Model  | MFLOPs |Params (M)|LFW%| AgeDB-30% |IJB-B( TAR at FAR1e–6) | IJB-C( TAR at FAR1e–6)| Pretrained model|
 | ------------- | ------------- |------------- |------------- |------------- |------------- |------------- |------------- |
-| MixFaceNet-M         | 626.1     | 3.95          | 99.68     | 97.05         | 91.55 | 93.42 | |
-| ShuffleMixFaceNet-M   | 626.1     | 3.95         | 99.60      | 96.98        | 91.47 | 93.5  | |
-| MixFaceNet-S         | 451.7     | 3.07         | 99.60    | 96.63         |90.17 | 92.30 | 
-|ShuffleMixFaceNet-S   | 451.7     | 3.07         | 99.58     | 97.05        |90.94 | 93.08  | [pretrained-mode](https://github.com/fdbtrs/mixfacenets/tree/main/pretrained_model/ShuffleMixFaceNet-S)|
-|MixFaceNet-XS        | 161.9     | 1.04          |99.60     | 95.85         | 88.48 | 90.73 | |
-|ShuffleMixFaceNet-XS  | 161.9     | 1.04         | 99.53     | 95.62         |87.86 | 90.43 | |
+| MixFaceNet-M         | 626.1     | 3.95          | 99.68     | 97.05         | 91.55 | 93.42 |[pretrained-mode](https://www.dropbox.com/sh/xed46f1in818usz/AADj70TVHwvfu_m4aJ-jMPHva?dl=0) |
+| ShuffleMixFaceNet-M   | 626.1     | 3.95         | 99.60      | 96.98        | 91.47 | 93.5  | [pretrained-mode](https://www.dropbox.com/sh/xed46f1in818usz/AADj70TVHwvfu_m4aJ-jMPHva?dl=0)|
+| MixFaceNet-S         | 451.7     | 3.07         | 99.60    | 96.63         |90.17 | 92.30 | [pretrained-mode](https://www.dropbox.com/sh/xed46f1in818usz/AADj70TVHwvfu_m4aJ-jMPHva?dl=0) |
+|ShuffleMixFaceNet-S   | 451.7     | 3.07         | 99.58     | 97.05        |90.94 | 93.08  | [pretrained-mode](https://www.dropbox.com/sh/xed46f1in818usz/AADj70TVHwvfu_m4aJ-jMPHva?dl=0)|
+|MixFaceNet-XS        | 161.9     | 1.04          |99.60     | 95.85         | 88.48 | 90.73 |[pretrained-mode](https://www.dropbox.com/sh/xed46f1in818usz/AADj70TVHwvfu_m4aJ-jMPHva?dl=0) |
+|ShuffleMixFaceNet-XS  | 161.9     | 1.04         | 99.53     | 95.62         |87.86 | 90.43 | [pretrained-mode](https://www.dropbox.com/sh/xed46f1in818usz/AADj70TVHwvfu_m4aJ-jMPHva?dl=0)|
 
 
 
@@ -24,7 +24,7 @@
 ![LFW](https://github.com/fdbtrs/mixfacenets/tree/main/images/lfw.png)
 
 
-If you find MixFaceNets useful in your research, please consider to cite the following related paper:
+If you find MixFaceNets useful in your research, please cite the following paper:
 
 
 ## Citation
