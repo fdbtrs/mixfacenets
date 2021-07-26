@@ -4,7 +4,8 @@
 
 ## This is the official repository of the paper: MixFaceNets: Extremely Efficient Face Recognition Networks.
 (Accepted in IJCB2021)
-[MixFaceNets](https://ieeexplore.ieee.org/abstract/document/9484374)
+[IEEE MixFaceNets](https://ieeexplore.ieee.org/abstract/document/9484374)
+
 [paper](https://raw.githubusercontent.com/fdbtrs/mixfacenets/main/paper/MixFaceNets_Extremely_Efficient_Face_Recognition_Networks.pdf)
 
 
@@ -35,7 +36,7 @@ MegaFace
 ![LFW](https://raw.githubusercontent.com/fdbtrs/mixfacenets/main/images/megaface.png)
 
 MegaFace(R)
-![LFW](https://raw.githubusercontent.com/fdbtrs/mixfacenets/main/images/megafacee.png)
+![LFW](https://raw.githubusercontent.com/fdbtrs/mixfacenets/main/images/megafacer.png)
 
 IJB-B
 ![LFW](https://raw.githubusercontent.com/fdbtrs/mixfacenets/main/images/ijbb.png)
