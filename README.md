@@ -6,7 +6,7 @@
 (Accepted in IJCB2021)
 [https://ieeexplore.ieee.org/abstract/document/9484374](https://ieeexplore.ieee.org/abstract/document/9484374)
 
-[paper](https://raw.githubusercontent.com/fdbtrs/mixfacenets/main/paper/MixFaceNets_Extremely_Efficient_Face_Recognition_Networks.pdf)
+[Paper](https://raw.githubusercontent.com/fdbtrs/mixfacenets/main/paper/MixFaceNets_Extremely_Efficient_Face_Recognition_Networks.pdf)
 
 
 
@@ -63,7 +63,7 @@ If you find MixFaceNets useful in your research, please cite the following paper
 
 ```
 The model is trained with ArcFace loss using Partial-FC algorithms.
-If you train the MixfaceNets with ArcFace and  Partial-FC, please follow distribution licenses. 
+If you train the MixfaceNets with ArcFace and  Partial-FC, please follow their distribution licenses. 
 
 
 ## Citation
