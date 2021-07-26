@@ -4,6 +4,8 @@
 
 
 
+If you find MixFaceNets useful in your research, please consider to cite the following related paper:
+
 
 ## Citation
 ```
