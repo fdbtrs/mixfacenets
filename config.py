@@ -17,7 +17,7 @@ config.s=64.0
 config.m=0.5
 
 #net paramerters
-config.net_name="resnet"
+config.net_name="mixfacenet"
 
 config.net_size="s"
 config.scale=1.0

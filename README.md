@@ -4,6 +4,10 @@
 
 
 
+
+The model is trained with ArcFace loss using Partial-FC algorithms.
+If you 
+
 ## Citation
 ```
 @inproceedings{deng2019arcface,

@@ -46,9 +46,9 @@ def main(args):
 
     dropout = 0.4 if cfg.dataset is "webface" else 0
 
-    if (cfg.net_name=="resnet"):
-        backbone = eval("backbones.{}".format(args.network))(False, dropout=dropout, fp16=cfg.fp16).to(local_rank)
-    else:
+    if ("resnet" in cfg.net_name):
+        backbone = eval("backbones.{}".format(cfg.net_name))(False, dropout=dropout, fp16=cfg.fp16).to(local_rank)
+    elif (cfg.net_name=="mixfacenet"):
      if(cfg.net_size=="s"):
         backbone = mx.mixnet_s(embedding_size=cfg.embedding_size, width_scale=cfg.scale, gdw_size=cfg.gdw_size,shuffle=cfg.shuffle).to(local_rank)
      else:
@@ -134,8 +134,7 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='PyTorch ArcFace Training')
     parser.add_argument('--local_rank', type=int, default=0, help='local_rank')
-    parser.add_argument('--network', type=str, default="iresnet100", help="backbone network")
-    parser.add_argument('--loss', type=str, default="RandomMargin", help="loss function")
+    parser.add_argument('--loss', type=str, default="ArcFace", help="loss function")
     parser.add_argument('--resume', type=int, default=1, help="model resuming")
     args_ = parser.parse_args()
     main(args_)
