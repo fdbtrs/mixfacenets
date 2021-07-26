@@ -22,7 +22,11 @@
 
 
 FLOPs vs. performance on LFW (accuracy), AgeDB-30 (accuracy),  MegaFace (TAR at FAR1e-6), IJB-B (TAR at FAR1e-4),  IJB-C (TAR at FAR1e-4) and refined version of MegaFace, noted as MegaFace (R), (TAR at FAR1e-6). Our MixFaceNet models are highlighted with triangle marker and red edge color.
+LFW
 ![LFW](https://raw.githubusercontent.com/fdbtrs/mixfacenets/main/images/lfw.png)
+
+AgeDb-30
+![LFW](https://raw.githubusercontent.com/fdbtrs/mixfacenets/main/images/agedb.png)
 
 
 If you find MixFaceNets useful in your research, please cite the following paper:
