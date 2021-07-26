@@ -3,6 +3,7 @@
 
 
 ## This is the official repository of the paper: MixFaceNets: Extremely Efficient Face Recognition Networks.
+(Accepted in IJCB2021)
 [MixFaceNets](https://ieeexplore.ieee.org/abstract/document/9484374)
 
 
@@ -20,8 +21,8 @@
 
 
 
-### FLOPs vs. performance on LFW (accuracy), AgeDB-30 (accuracy),  MegaFace (TAR at FAR1e-6), IJB-B (TAR at FAR1e-4),  IJB-C (TAR at FAR1e-4) and refined version of MegaFace, noted as MegaFace (R), (TAR at FAR1e-6). Our MixFaceNet models are highlighted with triangle marker and red edge color.
-![LFW](https://github.com/fdbtrs/mixfacenets/tree/main/images/lfw.png)
+FLOPs vs. performance on LFW (accuracy), AgeDB-30 (accuracy),  MegaFace (TAR at FAR1e-6), IJB-B (TAR at FAR1e-4),  IJB-C (TAR at FAR1e-4) and refined version of MegaFace, noted as MegaFace (R), (TAR at FAR1e-6). Our MixFaceNet models are highlighted with triangle marker and red edge color.
+![LFW](https://raw.githubusercontent.com/fdbtrs/mixfacenets/main/images/lfw.png)
 
 
 If you find MixFaceNets useful in your research, please cite the following paper:
