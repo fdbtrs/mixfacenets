@@ -13,7 +13,7 @@
 | MixFaceNet-M         | 626.1     | 3.95          | 99.68     | 97.05         | 91.55 | 93.42 | |
 | ShuffleMixFaceNet-M   | 626.1     | 3.95         | 99.60      | 96.98        | 91.47 | 93.5  | |
 | MixFaceNet-S         | 451.7     | 3.07         | 99.60    | 96.63         |90.17 | 92.30 | 
-|ShuffleMixFaceNet-S   | 451.7     | 3.07         | 99.58     | 97.05        |90.94 | 93.08  | (pretrained-mode)[https://github.com/fdbtrs/mixfacenets/pretrained_model/ShuffleMixFaceNet-S]|
+|ShuffleMixFaceNet-S   | 451.7     | 3.07         | 99.58     | 97.05        |90.94 | 93.08  | [pretrained-mode](https://github.com/fdbtrs/mixfacenets/tree/main/pretrained_model/ShuffleMixFaceNet-S)|
 |MixFaceNet-XS        | 161.9     | 1.04          |99.60     | 95.85         | 88.48 | 90.73 | |
 |ShuffleMixFaceNet-XS  | 161.9     | 1.04         | 99.53     | 95.62         |87.86 | 90.43 | |
 
