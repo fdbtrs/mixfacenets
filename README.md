@@ -5,8 +5,23 @@
 
 
 
+## Citation
+```
+@INPROCEEDINGS{9484374,
+  author={Boutros, Fadi and Damer, Naser and Fang, Meiling and Kirchbuchner, Florian and Kuijper, Arjan},
+  booktitle={2021 IEEE International Joint Conference on Biometrics (IJCB)}, 
+  title={MixFaceNets: Extremely Efficient Face Recognition Networks}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={1-8},
+  doi={10.1109/IJCB52358.2021.9484374}}
+
+
+```
 The model is trained with ArcFace loss using Partial-FC algorithms.
-If you 
+If you train the MixfaceNets with ArcFace and  Partial-FC, please follow distribution licenses. 
+
 
 ## Citation
 ```
