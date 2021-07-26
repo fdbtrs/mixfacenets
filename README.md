@@ -2,8 +2,21 @@
 
 
 
-## This is the official repository of the paper: MixFaceNets: Extremely Efficient Face Recognition Networks
-https://ieeexplore.ieee.org/abstract/document/9484374
+## This is the official repository of the paper: MixFaceNets: Extremely Efficient Face Recognition Networks.
+(MixFaceNets)[https://ieeexplore.ieee.org/abstract/document/9484374]
+
+
+
+
+| Model  | MFLOPs |Params (M)|LFW %| AgeDB-30 % |IJB-B ( TAR at FAR1e–6) | IJB-C ( TAR at FAR1e–6)| Pretrained model|
+| ------------- | ------------- |------------- |------------- |------------- |------------- |------------- |------------- |
+
+| MixFaceNet-M         | 626.1     | 3.95          | 99.68     | 97.05         | 91.55 | 93.42 | |
+| ShuffleMixFaceNet-M   | 626.1     | 3.95         | 99.60      | 96.98        | 91.47 | 93.5  | |
+| MixFaceNet-S         | 451.7     | 3.07         | 99.60    | 96.63         |90.17 | 92.30 | 
+|ShuffleMixFaceNet-S   | 451.7     | 3.07         | 99.58     | 97.05        |90.94 | 93.08  | (pretrained-mode)[/pretrained_mode/ShuffleMixFaceNet-S]
+|MixFaceNet-XS        | 161.9     | 1.04          |99.60     | 95.85         | 88.48 | 90.73 | |
+|ShuffleMixFaceNet-XS  | 161.9     | 1.04         | 99.53     | 95.62         |87.86 | 90.43 | |
 
 
 If you find MixFaceNets useful in your research, please consider to cite the following related paper:
