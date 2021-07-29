@@ -6,7 +6,7 @@
 (Accepted in IJCB2021)
 [https://ieeexplore.ieee.org/abstract/document/9484374](https://ieeexplore.ieee.org/abstract/document/9484374)
 
-[Paper](https://arxiv.org/abs/2107.13046)
+[Paper Arxiv](https://arxiv.org/abs/2107.13046)
 
 
 
