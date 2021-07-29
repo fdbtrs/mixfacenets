@@ -6,7 +6,7 @@
 (Accepted in IJCB2021)
 [https://ieeexplore.ieee.org/abstract/document/9484374](https://ieeexplore.ieee.org/abstract/document/9484374)
 
-[Paper](https://raw.githubusercontent.com/fdbtrs/mixfacenets/main/paper/MixFaceNets_Extremely_Efficient_Face_Recognition_Networks.pdf)
+[Paper](https://arxiv.org/abs/2107.13046)
 
 
 
